@@ -1,0 +1,31 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Payment{% endblock title %}
+{% block main-content %}
+<div class="container">
+    <h1>Payment Details</h1>
+    <hr>
+    <form method="post" action="{% url 'orders' %}">
+        {% csrf_token %}
+        {% for fm in form %}
+            {% if fm.name == 'amount' %}
+                <div class="form-group">
+                    <label for="{{ fm.id_for_label }}">{{ fm.label }}</label>
+                    <input type="text" class="form-control" id="{{ fm.id_for_label }}" value="{{ fm.value|default_if_none:totalamount }}" readonly>
+                    
+                </div>
+            {% else %}
+                <div class="form-group">
+                    {{ fm.label_tag }}
+                    {{ fm }}
+                    <small class="text-danger">{{ fm.errors|striptags }}</small>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <br>
+        <a href="{% url 'display_orders' %}" class="btn btn-primary">Submit Payment</a><br>
+
+        
+    </form>
+</div>
+{% endblock main-content %}

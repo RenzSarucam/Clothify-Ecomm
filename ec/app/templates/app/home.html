@@ -1,0 +1,174 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block banner_slider %}
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'app/images/banner/b1.png' %}" class="d-block w-100" alt="banner image">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'app/images/banner/b2.png' %}" class="d-block w-100" alt="banner image">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'app/images/banner/b3.png' %}" class="d-block w-100" alt="banner image">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'app/images/banner/b4.png' %}" class="d-block w-100" alt="banner image">
+      </div>
+    </div>
+  </div>
+{% endblock banner_slider %}
+
+{% block information %}
+
+{% comment %} <div class="container">
+    <div class="row bg-success text-center p-S text-white border-bottom shadow">
+        <h1>Products</h1>
+        <small class="fs-5">"Unveiling our latest sensation in fashion, the Clothify promises an unparalleled blend of comfort, style, and sophistication. Crafted with exquisite attention to detail and using the finest materials, this garment redefines elegance. Whether it's a casual outing or a glamorous affair, this piece effortlessly complements any occasion, ensuring you stand out with confidence and flair. Embrace luxury, embrace style redefine your wardrobe and make a statement with the impeccable allure of our Clothify."</small>
+        <br/><br/>
+    </div> {% endcomment %}
+
+</div>
+{% endblock information %}
+{% block main-content %}
+<div class="container">
+    <h1 class="text-center"> Clothify Product </h1>
+    <br/><br/>
+    <div class="row container">
+        <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s"
+             data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s;">
+            <div class="goodnesssec buttermilk smbg">
+                <a href="{% url 'category' 'SL' %}">
+                    <div class="goodnessseccont text-center">
+                        <img src="{% static 'app/images/product/Brown-Sleeve.png' %}" class="img-responsive center-block"
+                             alt="Brown Sleeve" style="width: 100px; height: 100px;">
+                        <p class="mlkpro">Brown Sleeve</p>
+                    </div>
+                </a>
+            </div>
+         </div>
+        
+    
+        
+            <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s"
+                 data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s;">
+                <div class="goodnesssec buttermilk smbg">
+                    <a href="{% url 'category' 'SL' %}">
+                        <div class="goodnessseccont text-center">
+                            <img src="{% static 'app/images/product/Khaki-Sleeve.png' %}" class="img-responsive center-block"
+                                 alt="Khaki Sleeve" style="width: 100px; height: 100px;">
+                            <p class="mlkpro">Khaki Sleeve</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        
+           
+                <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s"
+                     data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s;">
+                    <div class="goodnesssec buttermilk buttermilk">
+                        <a href="{% url 'category' 'SL' %}">
+                            <div class="goodnessseccont text-center">
+                                <img src="{% static 'app/images/product/Horny-Sleeve.png' %}" class="img-responsive center-block"
+                                     alt="Horny Sleeve" style="width: 100px; height: 100px;">
+                                <p class="mlkpro">Horny Sleeve</p>
+                            </div>
+                        </a>
+                    </div>
+                    <br/><br/>
+                </div>
+            
+               
+                    <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s"
+                         data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s;">
+                        <div class="goodnesssec buttermilk curdbgpro">
+                            <a href="{% url 'category' 'SL' %}">
+                                <div class="goodnessseccont text-center">
+                                    <img src="{% static 'app/images/product/Stripe-Sleeve.png' %}" class="img-responsive center-block"
+                                         alt="Stripe Sleeve" style="width: 100px; height: 100px;">
+                                    <p class="mlkpro">Stripe Sleeve</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s"
+             data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s;">
+            <div class="goodnesssec buttermilk smbg">
+                <a href="{% url 'category' 'SL' %}">
+                    <div class="goodnessseccont text-center">
+                        <img src="{% static 'app/images/product/Uniqlo-Sleeve.png' %}" class="img-responsive center-block"
+                             alt="Uniqlo Sleeve" style="width: 100px; height: 100px;">
+                        <p class="mlkpro">Uniqlo Sleeve</p>
+                    </div>
+                </a>
+            </div>
+            <br/><br/>
+         </div>
+        
+    
+        
+            <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s"
+                 data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s;">
+                <div class="goodnesssec buttermilk smbg">
+                    <a href="{% url 'category' 'TS' %}">
+                        <div class="goodnessseccont text-center">
+                            <img src="{% static 'app/images/product/Cross-Shirt.png' %}" class="img-responsive center-block"
+                                 alt="Cross Shirt" style="width: 100px; height: 100px;">
+                            <p class="mlkpro">Cross Shirt</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        
+           
+                <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s"
+                     data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s;">
+                    <div class="goodnesssec buttermilk buttermilk">
+                        <a href="{% url 'category' 'TS' %}">
+                            <div class="goodnessseccont text-center">
+                                <img src="{% static 'app/images/product/Ferragamo-Shirt.png' %}" class="img-responsive center-block"
+                                     alt="Ferragamo Shirt" style="width: 100px; height: 100px;">
+                                <p class="mlkpro">Ferragamo Shirt</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div>
+            
+               
+                    <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s"
+                         data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s;">
+                        <div class="goodnesssec buttermilk curdbgpro">
+                            <a href="{% url 'category' 'TS' %}">
+                                <div class="goodnessseccont text-center">
+                                    <img src="{% static 'app/images/product/Multi-Shirt.png' %}" class="img-responsive center-block"
+                                         alt="Multi Shirt" style="width: 100px; height: 100px;">
+                                    <p class="mlkpro">Multi Shirt</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s"
+                    data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s;">
+                   <div class="goodnesssec buttermilk smbg">
+                       <a href="{% url 'category' 'TS' %}">
+                           <div class="goodnessseccont text-center">
+                               <img src="{% static 'app/images/product/Vetements-Shirt.png' %}" class="img-responsive center-block"
+                                    alt="Vetements Shirt" style="width: 100px; height: 100px;">
+                               <p class="mlkpro">Vetements Shirt</p>
+                           </div>
+                       </a>
+                   </div>
+               </div>
+                 
+
+    </div>
+    
+</div>
+<br/><br/>
+{% endblock main-content %}
+
+
+

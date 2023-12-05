@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Your custom stylesheets -->
+    <link rel="stylesheet" href="{% static 'app/css/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'app/css/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}" />
+
+    <title>Clothify | {% block title %}{% endblock title %}</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img  src="{% static 'app/images/product/logocy.png' %}" width="70" height="70"/>
+    </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Products
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'category' 'TS' %}">Shirt</a></li>
+              <li><a class="dropdown-item" href="{% url 'category' 'SL' %}">Sleeve</a></li>
+              <li><a class="dropdown-item" href="{% url 'category' 'SS' %}">Shorts</a></li>
+              <li><a class="dropdown-item" href="{% url 'category' 'JT' %}">Jacket</a></li>
+            
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'about' %}">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'contact' %}">Contact Us</a>
+            </li>
+          
+        </ul>
+        <form class="d-flex" role="search">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-secondary" type="submit">Search</button>
+  </form>
+      </div>
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown mx-2">
+            <a class="nav-link dropdown-toggle text-white" href="#" 
+            id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span class="text-capitalization">{{request.user}}</span>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+            <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+            <li><a class="dropdown-item" href="{% url 'display_orders' %}">Orders</a></li>
+            <li><a class="dropdown-item" href="{% url 'passwordchange' %}">Change Password</a></li>
+            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+    </li>
+    <li class="nav-item mx-2">
+        <a href="{% url 'showcart' %}" class="nav-link text-white">Cart</a>
+    </li>
+    {% comment %} <li class="nav-item mx-2">
+        <a href="#" class="nav-link text-white">Wishlist</a>
+    </li> {% endcomment %}
+    {% else %}
+    <li class="nav-item mx-2">
+        <a href="{% url 'login' %}" class="nav-link text-white">Login</a>
+
+    </li>
+    <li class="nav-item mx-2">
+        <a href="{% url 'customerregistration' %}" class="nav-link text-white">Registration</a>
+
+    </li>
+    {% endif %}
+      </ul>
+    </div>
+  </nav>
+      {% block banner_slider %}{% endblock banner_slider %}
+      {% block information %}{% endblock information %}
+      {% block main-content %}{% endblock main-content %}
+      {% block payment-gateway %}{% endblock payment-gateway %}
+
+      <footer class="container-fluid fixed-bottom bg-dark text-white text-center p-2 mt-5">
+        Copyright : 2023 || Develop by : Renz Carljansen Sarucam
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src= "{% static 'app/js/owl.carousel.min.js' %}"></script>
+    <script src= "{% static 'app/js/all.min.js' %}"></script>
+    <script src= "{% static 'app/js/myscript.js' %}"></script>
+
+
+
+</body>
+</html>

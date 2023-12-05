@@ -1,0 +1,36 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Order Details{% endblock title %}
+
+{% block main-content %}
+<!-- ... -->
+<div class="container mt-4">
+    <h1 class="mb-4 text-center">Your Order Details</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-6 text-center"> <!-- Adding text-center class -->
+            <h3>Cart Item</h3>
+            <!-- Display cart items -->
+            {% for item in cart_items %}
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Product: {{ item.product.title }}</h5>
+                        <!-- Display the product image with inline styling for size -->
+                        <img src="{{ item.product.product_image.url }}" alt="{{ item.product.title }}" class="img-fluid" style="max-width: 150px; height: auto;">
+                        <p class="card-text">Quantity: {{ item.quantity }}</p>
+                        <p class="fw-bold">Price: {{ item.product.discounted_price }}</p>
+                        <p class="card-text">Status: {{ item.status }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            <p class="fw-bold"> Total Cost = {{ total_amount }}</p>
+            <p class="fw-bold">Total Cost = {{ total_amount }}</p>
+        </div>
+        <div class="col-md-6 text-center"> <!-- Adding text-center class -->
+            <!-- Other order details, like selected address, payment, etc. -->
+        </div>
+    </div>
+</div>
+<!-- ... -->
+
+{% endblock main-content %}
