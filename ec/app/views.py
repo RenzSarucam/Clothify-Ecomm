@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views import View
 
-from .models import Cart, Customer, Product, CartItem
+from .models import Cart, Customer, Product
 from . forms import CustomerRegistrationForm, CustomerProfileForm,MyPasswordChangeForm, OrderPlaceForm, PaymentForm
 from django.contrib import messages
 from django.db.models import Q, Sum
@@ -323,6 +323,9 @@ def checkout_and_order_placement(request):
         form = OrderPlaceForm()
     
     return render(request, 'checkout.html', {'form': form})
+
+
+
 
 
 

@@ -31,14 +31,15 @@
             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
           </li></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
               Products
-            </a>
+          </a>
+          
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{% url 'category' 'TS' %}">Shirt</a></li>
               <li><a class="dropdown-item" href="{% url 'category' 'SL' %}">Sleeve</a></li>
-              <li><a class="dropdown-item" href="{% url 'category' 'SS' %}">Shorts</a></li>
-              <li><a class="dropdown-item" href="{% url 'category' 'JT' %}">Jacket</a></li>
+              {% comment %} <li><a class="dropdown-item" href="{% url 'category' 'SS' %}">Shorts</a></li>
+              <li><a class="dropdown-item" href="{% url 'category' 'JT' %}">Jacket</a></li> {% endcomment %}
             
             </ul>
           </li>
@@ -50,10 +51,10 @@
             </li>
           
         </ul>
-        <form class="d-flex" role="search">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-secondary" type="submit">Search</button>
-  </form>
+          {% comment %} <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-secondary" type="submit">Search</button>
+    </form> {% endcomment %}
       </div>
 
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -90,10 +91,10 @@
       {% block banner_slider %}{% endblock banner_slider %}
       {% block information %}{% endblock information %}
       {% block main-content %}{% endblock main-content %}
-      {% block payment-gateway %}{% endblock payment-gateway %}
+      {% comment %} {% block payment-gateway %}{% endblock payment-gateway %} {% endcomment %}
 
       <footer class="container-fluid fixed-bottom bg-dark text-white text-center p-2 mt-5">
-        Copyright : 2023 || Develop by : Renz Carljansen Sarucam
+        Copyright : 2023 || Develop by : Clothify Incorporation Team
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
